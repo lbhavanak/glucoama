@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Result</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+    text-align:center;
+    padding-top:80px;
+}
+
+.card{
+    background:white;
+    width:500px;
+    margin:auto;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.success{
+    color:red;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.normal{
+    color:green;
+    font-size:28px;
+    font-weight:bold;
+}
+
+a{
+    text-decoration:none;
+    background:#1e3c72;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Prediction Result</h1>
+
+<p><b>Uploaded File:</b> {{ filename }}</p>
+
+{% if prediction == "Glaucoma Detected" %}
+<p class="success">⚠ {{ prediction }}</p>
+{% else %}
+<p class="normal">✔ {{ prediction }}</p>
+{% endif %}
+
+<br><br>
+
+<a href="/">Upload Another Image</a>
+
+</div>
+
+</body>
+</html>
